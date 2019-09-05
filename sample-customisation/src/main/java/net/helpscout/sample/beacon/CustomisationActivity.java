@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.helpscout.beacon.Beacon;
@@ -43,6 +42,8 @@ public class CustomisationActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customisation);
+
+        ((CustomisationApplication) getApplication()).getScratch().setupAndLaunchBeacon();
 
         //typically this should be set after successfully logging on to your service
         Beacon.login(secureModeUserEmail);
@@ -93,8 +94,10 @@ public class CustomisationActivity extends AppCompatActivity {
      * Illustrates how to use the user attributes
      */
     private void addUserAttributes() {
-        Beacon.addAttributeWithKey("App version", getAppVersion());
-        Beacon.addAttributeWithKey("OS version", Build.VERSION.RELEASE);
+        Beacon.addAttributeWithKey("name", "Samantha Aoki");
+        Beacon.addAttributeWithKey("email", "samantha@aoki.com");
+        Beacon.addAttributeWithKey("company", "Aoki Meida");
+        Beacon.addAttributeWithKey("jobTitle", "Event Coordinator");
         Beacon.addAttributeWithKey("Device", Build.MANUFACTURER + " " + Build.MODEL);
     }
 

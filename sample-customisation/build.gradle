@@ -45,8 +45,8 @@ android {
 
 ext {
     androidXLibraryForThisProject = '1.0.0'
-    materialLibraryVersion = '1.1.0-alpha01'
-    constraintLayoutVersion = '2.0.0-alpha2'
+    materialLibraryVersion = '1.1.0-alpha09'
+    constraintLayoutVersion = '2.0.0-beta2'
 }
 
 dependencies {

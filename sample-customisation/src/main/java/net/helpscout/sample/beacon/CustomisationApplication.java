@@ -11,7 +11,8 @@ import timber.log.Timber;
 
 public class CustomisationApplication extends Application {
 
-    private static String secureBeaconId = "YOUR_BEACON_ID";
+    private static String secureBeaconId = "598349f2-c5a4-424d-8eb6-8c1d0813a42f";
+    private Scratch scratch;
 
     @Override
     public void onCreate() {
@@ -20,6 +21,8 @@ public class CustomisationApplication extends Application {
 
         // Use this to start listening to close and open events on the Beacon
         initBeaconListener();
+
+        scratch = new Scratch(this.getApplicationContext());
     }
 
     private void initBeacon() {
@@ -27,6 +30,14 @@ public class CustomisationApplication extends Application {
                 .withBeaconId(secureBeaconId)
                 .withLogsEnabled(true)
                 .build();
+    }
+
+    public Scratch getScratch() {
+        return scratch;
+    }
+
+    private String getBeaconColor() {
+        return "#FF0022";
     }
 
     private void initBeaconListener() {
