@@ -4,6 +4,8 @@ apply plugin: 'com.getkeepsafe.dexcount'
 apply from: '../signing/signing.gradle'
 apply from: '../dependencies.gradle'
 
+apply plugin: 'com.google.firebase.firebase-perf'
+
 android {
 
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -54,6 +56,8 @@ dependencies {
     implementation "com.google.android.material:material:$materialLibraryVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
 
+    implementation 'com.google.firebase:firebase-core:17.2.0'
+    implementation 'com.google.firebase:firebase-perf:19.0.0'
 
     implementation "com.helpscout:beacon-core:$beaconCoreVersion"
     implementation "com.helpscout:beacon-ui:$beaconUiVersion"
